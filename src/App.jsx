@@ -10,7 +10,7 @@ export default function App() {
       {/* This is always visible */}
       <Navbar />
 
-      <div className="p-4">
+      <div className="">
         <Routes>
           <Route path="/" element={<Homepage />} />
         </Routes>

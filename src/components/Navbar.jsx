@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <nav className="navbar bg-base-100 shadow-sm">
+    <nav className="navbar bg-transparent fixed top-0 left-0 w-full z-50">
       {/* ─── Navbar Start (logo + mobile menu) ─── */}
       <div className="navbar-start">
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-xl z-1">
           StockWave
         </Link>
         {/* mobile dropdown */}
@@ -43,15 +43,16 @@ export default function Navbar() {
 
       {/* ─── Navbar Center (tabs on desktop) ─── */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li><Link to="/item1">Item 1</Link></li>
-          <li><Link to="/item2">Item 2</Link></li>
-          <li><Link to="/item3">Item 3</Link></li>
+        <ul className="menu menu-horizontal space-x-12">
+          <li><Link to="/item1">Features</Link></li>
+          <li><Link to="/item2">Pricing</Link></li>
+          <li><Link to="/item3">Resources</Link></li>
+          <li><Link to="/item4">Blog</Link></li>
         </ul>
       </div>
-
+      
       {/* ─── Navbar End (search + avatar) ─── */}
-      <div className="navbar-end">
+      <div className="navbar-end pr-6">
         <div className="flex gap-2 items-center">
           {/* search box */}
           <input
@@ -61,7 +62,7 @@ export default function Navbar() {
           />
 
           {/* user avatar dropdown */}
-          <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end pl-2">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img
