@@ -48,6 +48,7 @@ export default function Navbar() {
           <li><Link to="/item2">Pricing</Link></li>
           <li><Link to="/item3">Resources</Link></li>
           <li><Link to="/item4">Blog</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
       </div>
       
