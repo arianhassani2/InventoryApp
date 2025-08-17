@@ -75,6 +75,7 @@ app.post("/api/login", async (req, res) => {
       process.env.JWT_SECRET, // secret key
       { expiresIn: "1d" } // optional expiration
     );
+    
     // Only send non-sensitive user info
     const safeUser = {
       id: user.id,
