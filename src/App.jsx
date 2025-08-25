@@ -11,29 +11,30 @@ import Analytics from "./pages/Analytics";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import PublicLayout from "./components/PublicLayout";
+import ProtectedRoute from './ProtectedRoute';
 
 export default function App() {
   return (
-    
-      <Routes>
-        {/* Public (marketing) routes */}
-        <Route element={<PublicLayout />}>
-          <Route path="/" element={<Homepage />} />
-          {/* <Route path="/pricing" element={<Pricing />} /> */}
-          {/* <Route path="/blog" element={<Blog />} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {/* …any other public pages */}
-        </Route>
+    <Routes>
+      {/* Public (marketing) routes */}
+      <Route element={<PublicLayout />}>
+        <Route path="/" element={<Homepage />} />
+        {/* <Route path="/pricing" element={<Pricing />} /> */}
+        {/* <Route path="/blog" element={<Blog />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        {/* …any other public pages */}
+      </Route>
 
-        {/* Protected dashboard routes */}
+      {/* Protected dashboard routes */}
+      <Route element={<ProtectedRoute />}>
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/users" element={<Users />} />
           <Route path="/settings" element={<Settings />} />
         </Route>
-      </Routes>
-    
-  )
+      </Route>
+    </Routes>
+  );
 }
